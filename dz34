@@ -52,22 +52,7 @@ public static void validateUser(User user) throws AccessDeniedException
  public static void main(String[] args) throws UserNotFoundException, AccessDeniedException
  В нем нужно запросить логин и пароль пользователя, проверить есть ли данная пара "логин и
   пароль" в массиве пользователей и последним шагом провалидировать возраст.
-    public static void main(String[] args) throws UserNotFoundException,
-     AccessDeniedException {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Введите логин");
-        String login = scanner.nextLine();
-        System.out.println("Введите пароль");
-        String password = scanner.nextLine();
-
-        //Проверить логин и пароль
-
-        //Вызвать методы валидации пользователя
-
-        System.out.println("Доступ предоставлен");
-    }
+  
 8. Программа завершена. Отличная работа!
 Задача 2. Валидация прочитанных событий
 Описание
@@ -94,32 +79,10 @@ public static void validateUser(User user) throws AccessDeniedException
 2. Переопределим метод toString для класса Event, чтобы вывести значения всех полей;
 3. Создадим два дочерних класса от класса Event - Movie и Theatre;
 4. Создадим класс Main в котором нужно создать два метода для получения массива Movies,
- Theatres:
-    public static Movie[] getMovies() {
-        return new Movie[]{
-            new Movie("Начало", 2010, 16),
-            ...
-        };
-    }
 
-    public static Theatre[] getTheatres() {
-        return new Theatre[]{
-            new Theatre("Анна Каренина", 2017, 16),
-            ...
-        };
-    }
 5. Добавим в класс Main метод для валидации событий (Event)
 public static void validEvent(Event event)
 Если хоть одно из полей не заполнено, нужно выбросить исключение throw new RuntimeException,
  обрабатывать или перехватывать эту ошибку нигде не нужно.
 6. Добавим в класс Main метод main для запуска и валидации созданных событий:
-public static void main(String[] args) {
-    for (Event event: getMovies()) {
-        validEvent(event);
-    }
-    for (Event event: getTheatres()) {
-        validEvent(event);
-    }
-    System.out.println("Все события корректны");
-}
 
